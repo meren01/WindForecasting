@@ -1,0 +1,8 @@
+{
+  "target": "Speed",
+  "features": [
+    "Prev_Speed",
+    "Direction_deg",
+    "h"
+  ]
+}
