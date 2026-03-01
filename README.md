@@ -31,20 +31,5 @@ To ensure the highest accuracy, I implemented and compared several industry-stan
  
 Developed by Murat Eren Furfuru
 
-```mermaid
 
-flowchart TD
-    A[Raw Wind Speed Signal<br/>S(t)] --> B[Preprocess<br/>- Parse DateTime & sort<br/>- Missing value imputation]
-    B --> C[Causal Windowing<br/>Take past window: x(t-window+1 : t)]
-    C --> D[DWT (Mallat) with db4<br/>Level = 3]
-    D --> E[MRA-based Reconstruction (inside window)<br/>Isolate each coefficient & waverec]
-    E --> F[Wavelet Features at time t<br/>f(t) = {A3(t), D3(t), D2(t), D1(t)}<br/>(take LAST value of each component)]
-    B --> G[Lag Features<br/>Lag_1, Lag_3, ...]
-    F --> H[Feature Merge<br/>X(t) = concat( f(t), lags, other vars )]
-    G --> H
-    H --> I[Train ML Model<br/>(RF / XGBoost / ANN / LSTM ...)]
-    I --> J[Forecast Output<br/>Ŝ(t+1) (or Ŝ(t+h))]
-
-
-```
 
