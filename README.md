@@ -31,7 +31,7 @@ To ensure the highest accuracy, I implemented and compared several industry-stan
  
 Developed by Murat Eren Furfuru
 
-```
+```mermaid
 
 flowchart TD
     A[Raw Wind Speed Signal<br/>S(t)] --> B[Preprocess<br/>- Parse DateTime & sort<br/>- Missing value imputation]
